@@ -219,6 +219,7 @@ class attention_block():
         return self.normalisation_2(x+self.MLP(self.normalisation_1(x+self.attention(x))))
 
 
+
 class Batch_norm_1D():
     def __init__(self, features, device="cpu", eps=1e-5, momentum=0.1):
         self.features = features
@@ -257,7 +258,7 @@ class Batch_norm_1D():
             
         
 class Batch_norm_2D():
-     def __init__(self, features, device="cpu", eps=1e-5, momentum=0.1):
+    def __init__(self, features, device="cpu", eps=1e-5, momentum=0.1):
         self.features = features
         self.eps = eps
         self.momentum = momentum
@@ -296,5 +297,4 @@ class Batch_norm_2D():
         x_final = x_final.reshape(B, H, W, C).contiguous().permute(0, 3, 1, 2)
         return x_final
             
-        
         
