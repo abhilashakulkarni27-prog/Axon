@@ -1,5 +1,5 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np 
+import pandas as pd 
 import matplotlib.pyplot as plt
 import torch as pt
 import torch.nn.functional as F
@@ -187,9 +187,9 @@ class multi_headed_attention():
 
 class normalization_layer():
     def __init__(self,embedding_dimension,device="cpu"):
-        self.gamma = pt.ones(embedding_dimension,device=device)   # not the full (B,T,C) shape!
+        self.gamma = pt.ones(embedding_dimension,device=device)   
         self.beta  = pt.zeros(embedding_dimension,device=device)
-        self.gamma.requires_grad_()  # ← missing!
+        self.gamma.requires_grad_()  
         self.beta.requires_grad_()
     
     def parameters(self):
